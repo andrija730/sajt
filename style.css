@@ -9,11 +9,26 @@ html, body{
 p{
   font-size: 16px;
 }
+
+main{
+  margin:100px 20px;
+}
+
+#main img{
+  transition: all 0.3s;
+}
+#main img:hover{
+  transform: scale(1.1);
+}
+
 nav{
     background-color: #439ed7;
 }
+.nav-link{
+  font-size: 21px;
+}
 .navbar-brand{
-  font-size: 25px;
+  font-size: 31px;
   font-family: 'Nunito';
 }
 .offcanvas-title{
@@ -54,15 +69,18 @@ html {
     color: #f1f1f1;
 }
 .hero-image {
-  background-image: url("slika.jpg");
+  position: relative;
+  
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100vh;
   object-fit: cover;
-  filter: brightness(1);
-   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-   position: relative;
- 
+  display: block;
 }
 
 
@@ -145,9 +163,6 @@ hr{
   border-radius: 25px;
 }
 
-main{
-    margin:100px 15px;
-}
 
 
 #ordLista{
@@ -205,6 +220,7 @@ main{
       transition: color 0.3s ease-in;
     }
 
+
 .UsLista{
   list-style-type: none;
 }
@@ -214,6 +230,7 @@ main{
 }
 
 
+
 @media (max-width:425px){
     .textPrekoslike{
       padding: 50px 20px;
@@ -221,7 +238,6 @@ main{
     }
 
 }
-
 @media (max-width:1024px){
     iframe{
       width: 80%;
@@ -233,6 +249,7 @@ main{
   p{
   font-size: 14px;
 }
+
 }
 @media (min-width:550px) and (max-width:850px){
    .lista{
@@ -307,4 +324,6 @@ main{
       color:rgba(255, 255, 255, 0.55);
       transition: color 0.3s ease-in;
     }
+
+
 }
