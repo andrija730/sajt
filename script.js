@@ -25,3 +25,46 @@ window.addEventListener('scroll', function(){
             nav.classList.add('nijePomereno2');
         }
 })
+
+const input = document.getElementById('inputValidation');
+
+input.addEventListener('input', filtriraj);
+
+function filtriraj() {
+  const filter = input.value.toLowerCase().trim();
+
+
+  const oblasti = document.querySelectorAll('h2.oblasti');
+
+  oblasti.forEach(h2 => {
+
+    const opis = h2.nextElementSibling; 
+    const lista = opis.nextElementSibling; 
+
+    let imaUsluga = false;
+
+    lista.querySelectorAll('li').forEach(li => {
+      const naziv = li.querySelector('span.levo').textContent.toLowerCase();
+      const poklapaSe = naziv.includes(filter);
+
+      li.style.display = poklapaSe ? '' : 'none';
+
+      if (poklapaSe) {
+        imaUsluga = true;
+      }
+    });
+
+
+    if (filter === '') {
+
+      h2.style.display = '';
+      opis.style.display = '';
+      lista.style.display = '';
+      lista.querySelectorAll('li').forEach(li => li.style.display = '');
+    } else {
+      h2.style.display = imaUsluga ? '' : 'none';
+      opis.style.display = imaUsluga ? '' : 'none';
+      lista.style.display = imaUsluga ? '' : 'none';
+    }
+  });
+}
